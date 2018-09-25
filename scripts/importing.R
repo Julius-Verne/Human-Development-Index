@@ -1,5 +1,4 @@
 
-
 HDI_2017 <- read_excel(here("input-data","HDI_1.xlsx"), sheet = "HDI")
 MEAS_2017 <- read_excel(here("input-data","HDI_1.xlsx"), sheet = "Measurements")
 REG_2017 <- read_excel(here("input-data","HDI_1.xlsx"), sheet = "Regions")
