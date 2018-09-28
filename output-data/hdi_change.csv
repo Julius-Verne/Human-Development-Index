@@ -1,0 +1,391 @@
+Countries,HDI,CHANGE_HDI_Rank 2012-2017,Year
+Norway,1,0,2017
+Switzerland,2,0,2017
+Australia,3,0,2017
+Ireland,4,13,2017
+Germany,5,-1,2017
+Iceland,6,5,2017
+"Hong Kong, China (SAR)",7,3,2017
+Sweden,7,5,2017
+Singapore,9,-2,2017
+Netherlands,10,-4,2017
+Denmark,11,-6,2017
+Canada,12,0,2017
+United States,13,-5,2017
+United Kingdom,14,5,2017
+Finland,15,-3,2017
+New Zealand,16,-1,2017
+Belgium,17,-2,2017
+Liechtenstein,17,-8,2017
+Japan,19,1,2017
+Austria,20,-2,2017
+Luxembourg,21,1,2017
+Israel,22,-1,2017
+Korea (Republic of),22,1,2017
+France,24,0,2017
+Slovenia,25,0,2017
+Spain,26,1,2017
+Czechia,27,1,2017
+Italy,28,-2,2017
+Malta,29,4,2017
+Estonia,30,-1,2017
+Greece,31,-1,2017
+Cyprus,32,-1,2017
+Poland,33,5,2017
+United Arab Emirates,34,1,2017
+Andorra,35,-2,2017
+Lithuania,35,5,2017
+Qatar,37,-1,2017
+Slovakia,38,-1,2017
+Brunei Darussalam,39,-8,2017
+Saudi Arabia,39,0,2017
+Latvia,41,2,2017
+Portugal,41,1,2017
+Bahrain,43,7,2017
+Chile,44,0,2017
+Hungary,45,-4,2017
+Croatia,46,0,2017
+Argentina,47,-2,2017
+Oman,48,0,2017
+Russian Federation,49,3,2017
+Montenegro,50,0,2017
+Bulgaria,51,6,2017
+Romania,52,2,2017
+Belarus,53,-4,2017
+Bahamas,54,-7,2017
+Uruguay,55,1,2017
+Kuwait,56,-3,2017
+Malaysia,57,1,2017
+Barbados,58,-4,2017
+Kazakhstan,58,0,2017
+Iran (Islamic Republic of),60,-2,2017
+Palau,60,1,2017
+Seychelles,62,4,2017
+Costa Rica,63,1,2017
+Turkey,64,8,2017
+Mauritius,65,3,2017
+Panama,66,-1,2017
+Serbia,67,0,2017
+Albania,68,0,2017
+Trinidad and Tobago,69,-7,2017
+Antigua and Barbuda,70,1,2017
+Georgia,70,7,2017
+Saint Kitts and Nevis,72,3,2017
+Cuba,73,-5,2017
+Mexico,74,-1,2017
+Grenada,75,3,2017
+Sri Lanka,76,-3,2017
+Bosnia and Herzegovina,77,7,2017
+Venezuela (Bolivarian Republic of),78,-16,2017
+Brazil,79,7,2017
+Azerbaijan,80,-1,2017
+Lebanon,80,-4,2017
+The former Yugoslav Republic of Macedonia,80,2,2017
+Armenia,83,2,2017
+Thailand,83,4,2017
+Algeria,85,-3,2017
+China,86,7,2017
+Ecuador,86,4,2017
+Ukraine,88,-8,2017
+Peru,89,0,2017
+Colombia,90,2,2017
+Saint Lucia,90,-2,2017
+Fiji,92,5,2017
+Mongolia,92,4,2017
+Dominican Republic,94,8,2017
+Jordan,95,-5,2017
+Tunisia,95,2,2017
+Jamaica,97,-3,2017
+Tonga,98,2,2017
+Saint Vincent and the Grenadines,99,0,2017
+Suriname,100,1,2017
+Botswana,101,8,2017
+Maldives,101,4,2017
+Dominica,103,-9,2017
+Samoa,104,0,2017
+Uzbekistan,105,4,2017
+Belize,106,-3,2017
+Marshall Islands,106,NA,2017
+Libya,108,-26,2017
+Turkmenistan,108,0,2017
+Gabon,110,3,2017
+Paraguay,110,2,2017
+Moldova (Republic of),112,-3,2017
+Philippines,113,1,2017
+South Africa,113,6,2017
+Egypt,115,0,2017
+Indonesia,116,-1,2017
+Viet Nam,116,1,2017
+Bolivia (Plurinational State of),118,2,2017
+"Palestine, State of",119,-12,2017
+Iraq,120,1,2017
+El Salvador,121,-4,2017
+Kyrgyzstan,122,0,2017
+Morocco,123,3,2017
+Nicaragua,124,3,2017
+Cabo Verde,125,0,2017
+Guyana,125,-2,2017
+Guatemala,127,4,2017
+Tajikistan,127,-4,2017
+Namibia,129,0,2017
+India,130,2,2017
+Micronesia (Federated States of),131,-1,2017
+Timor-Leste,132,1,2017
+Honduras,133,2,2017
+Bhutan,134,4,2017
+Kiribati,134,0,2017
+Bangladesh,136,7,2017
+Congo,137,2,2017
+Vanuatu,138,-2,2017
+Lao People's Democratic Republic,139,2,2017
+Ghana,140,0,2017
+Equatorial Guinea,141,-4,2017
+Kenya,142,3,2017
+Sao Tome and Principe,143,4,2017
+Eswatini (Kingdom of),144,0,2017
+Zambia,144,-3,2017
+Cambodia,146,0,2017
+Angola,147,3,2017
+Myanmar,148,0,2017
+Nepal,149,0,2017
+Pakistan,150,1,2017
+Cameroon,151,3,2017
+Solomon Islands,152,1,2017
+Papua New Guinea,153,-1,2017
+Tanzania (United Republic of),154,3,2017
+Syrian Arab Republic,155,-27,2017
+Zimbabwe,156,2,2017
+Nigeria,157,-2,2017
+Rwanda,158,3,2017
+Lesotho,159,-1,2017
+Mauritania,159,3,2017
+Madagascar,161,-5,2017
+Uganda,162,2,2017
+Benin,163,2,2017
+Senegal,164,5,2017
+Comoros,165,-2,2017
+Togo,165,5,2017
+Sudan,167,-1,2017
+Afghanistan,168,-1,2017
+Haiti,168,0,2017
+Côte d'Ivoire,170,3,2017
+Malawi,171,1,2017
+Djibouti,172,-1,2017
+Ethiopia,173,3,2017
+Gambia,174,0,2017
+Guinea,175,2,2017
+Congo (Democratic Republic of the),176,3,2017
+Guinea-Bissau,177,-2,2017
+Yemen,178,-20,2017
+Eritrea,179,-1,2017
+Mozambique,180,1,2017
+Liberia,181,-2,2017
+Mali,182,0,2017
+Burkina Faso,183,2,2017
+Sierra Leone,184,0,2017
+Burundi,185,-3,2017
+Chad,186,0,2017
+South Sudan,187,0,2017
+Central African Republic,188,0,2017
+Niger,189,0,2017
+Korea (Democratic People's Rep. of),NA,NA,2017
+Monaco,NA,NA,2017
+Nauru,NA,NA,2017
+San Marino,NA,NA,2017
+Somalia,NA,NA,2017
+Tuvalu,NA,NA,2017
+Norway,1,0,2012
+Switzerland,2,0,2012
+Australia,3,0,2012
+Ireland,17,13,2012
+Germany,4,-1,2012
+Iceland,11,5,2012
+"Hong Kong, China (SAR)",10,3,2012
+Sweden,12,5,2012
+Singapore,7,-2,2012
+Netherlands,6,-4,2012
+Denmark,5,-6,2012
+Canada,12,0,2012
+United States,8,-5,2012
+United Kingdom,19,5,2012
+Finland,12,-3,2012
+New Zealand,15,-1,2012
+Belgium,15,-2,2012
+Liechtenstein,9,-8,2012
+Japan,20,1,2012
+Austria,18,-2,2012
+Luxembourg,22,1,2012
+Israel,21,-1,2012
+Korea (Republic of),23,1,2012
+France,24,0,2012
+Slovenia,25,0,2012
+Spain,27,1,2012
+Czechia,28,1,2012
+Italy,26,-2,2012
+Malta,33,4,2012
+Estonia,29,-1,2012
+Greece,30,-1,2012
+Cyprus,31,-1,2012
+Poland,38,5,2012
+United Arab Emirates,35,1,2012
+Andorra,33,-2,2012
+Lithuania,40,5,2012
+Qatar,36,-1,2012
+Slovakia,37,-1,2012
+Brunei Darussalam,31,-8,2012
+Saudi Arabia,39,0,2012
+Latvia,43,2,2012
+Portugal,42,1,2012
+Bahrain,50,7,2012
+Chile,44,0,2012
+Hungary,41,-4,2012
+Croatia,46,0,2012
+Argentina,45,-2,2012
+Oman,48,0,2012
+Russian Federation,52,3,2012
+Montenegro,50,0,2012
+Bulgaria,57,6,2012
+Romania,54,2,2012
+Belarus,49,-4,2012
+Bahamas,47,-7,2012
+Uruguay,56,1,2012
+Kuwait,53,-3,2012
+Malaysia,58,1,2012
+Barbados,54,-4,2012
+Kazakhstan,58,0,2012
+Iran (Islamic Republic of),58,-2,2012
+Palau,61,1,2012
+Seychelles,66,4,2012
+Costa Rica,64,1,2012
+Turkey,72,8,2012
+Mauritius,68,3,2012
+Panama,65,-1,2012
+Serbia,67,0,2012
+Albania,68,0,2012
+Trinidad and Tobago,62,-7,2012
+Antigua and Barbuda,71,1,2012
+Georgia,77,7,2012
+Saint Kitts and Nevis,75,3,2012
+Cuba,68,-5,2012
+Mexico,73,-1,2012
+Grenada,78,3,2012
+Sri Lanka,73,-3,2012
+Bosnia and Herzegovina,84,7,2012
+Venezuela (Bolivarian Republic of),62,-16,2012
+Brazil,86,7,2012
+Azerbaijan,79,-1,2012
+Lebanon,76,-4,2012
+The former Yugoslav Republic of Macedonia,82,2,2012
+Armenia,85,2,2012
+Thailand,87,4,2012
+Algeria,82,-3,2012
+China,93,7,2012
+Ecuador,90,4,2012
+Ukraine,80,-8,2012
+Peru,89,0,2012
+Colombia,92,2,2012
+Saint Lucia,88,-2,2012
+Fiji,97,5,2012
+Mongolia,96,4,2012
+Dominican Republic,102,8,2012
+Jordan,90,-5,2012
+Tunisia,97,2,2012
+Jamaica,94,-3,2012
+Tonga,100,2,2012
+Saint Vincent and the Grenadines,99,0,2012
+Suriname,101,1,2012
+Botswana,109,8,2012
+Maldives,105,4,2012
+Dominica,94,-9,2012
+Samoa,104,0,2012
+Uzbekistan,109,4,2012
+Belize,103,-3,2012
+Marshall Islands,NA,NA,2012
+Libya,82,-26,2012
+Turkmenistan,108,0,2012
+Gabon,113,3,2012
+Paraguay,112,2,2012
+Moldova (Republic of),109,-3,2012
+Philippines,114,1,2012
+South Africa,119,6,2012
+Egypt,115,0,2012
+Indonesia,115,-1,2012
+Viet Nam,117,1,2012
+Bolivia (Plurinational State of),120,2,2012
+"Palestine, State of",107,-12,2012
+Iraq,121,1,2012
+El Salvador,117,-4,2012
+Kyrgyzstan,122,0,2012
+Morocco,126,3,2012
+Nicaragua,127,3,2012
+Cabo Verde,125,0,2012
+Guyana,123,-2,2012
+Guatemala,131,4,2012
+Tajikistan,123,-4,2012
+Namibia,129,0,2012
+India,132,2,2012
+Micronesia (Federated States of),130,-1,2012
+Timor-Leste,133,1,2012
+Honduras,135,2,2012
+Bhutan,138,4,2012
+Kiribati,134,0,2012
+Bangladesh,143,7,2012
+Congo,139,2,2012
+Vanuatu,136,-2,2012
+Lao People's Democratic Republic,141,2,2012
+Ghana,140,0,2012
+Equatorial Guinea,137,-4,2012
+Kenya,145,3,2012
+Sao Tome and Principe,147,4,2012
+Eswatini (Kingdom of),144,0,2012
+Zambia,141,-3,2012
+Cambodia,146,0,2012
+Angola,150,3,2012
+Myanmar,148,0,2012
+Nepal,149,0,2012
+Pakistan,151,1,2012
+Cameroon,154,3,2012
+Solomon Islands,153,1,2012
+Papua New Guinea,152,-1,2012
+Tanzania (United Republic of),157,3,2012
+Syrian Arab Republic,128,-27,2012
+Zimbabwe,158,2,2012
+Nigeria,155,-2,2012
+Rwanda,161,3,2012
+Lesotho,158,-1,2012
+Mauritania,162,3,2012
+Madagascar,156,-5,2012
+Uganda,164,2,2012
+Benin,165,2,2012
+Senegal,169,5,2012
+Comoros,163,-2,2012
+Togo,170,5,2012
+Sudan,166,-1,2012
+Afghanistan,167,-1,2012
+Haiti,168,0,2012
+Côte d'Ivoire,173,3,2012
+Malawi,172,1,2012
+Djibouti,171,-1,2012
+Ethiopia,176,3,2012
+Gambia,174,0,2012
+Guinea,177,2,2012
+Congo (Democratic Republic of the),179,3,2012
+Guinea-Bissau,175,-2,2012
+Yemen,158,-20,2012
+Eritrea,178,-1,2012
+Mozambique,181,1,2012
+Liberia,179,-2,2012
+Mali,182,0,2012
+Burkina Faso,185,2,2012
+Sierra Leone,184,0,2012
+Burundi,182,-3,2012
+Chad,186,0,2012
+South Sudan,187,0,2012
+Central African Republic,188,0,2012
+Niger,189,0,2012
+Korea (Democratic People's Rep. of),NA,NA,2012
+Monaco,NA,NA,2012
+Nauru,NA,NA,2012
+San Marino,NA,NA,2012
+Somalia,NA,NA,2012
+Tuvalu,NA,NA,2012

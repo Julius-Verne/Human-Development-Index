@@ -1,0 +1,285 @@
+---
+title: 'HDI: Latin America and the World'
+author: "Julian Hernández"
+date: "27 de septiembre de 2018"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3  
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+library(readxl)
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(dplyr)
+library(sf)
+library(rnaturalearth)
+library(viridis)
+library(ggrepel)
+library(CGPfunctions)
+
+hdi.17 <- read_csv(here("output-data","hdi_17.csv"))
+hdi.change <- read_csv(here("output-data","hdi_change.csv"))
+hdi.regions <- read_csv(here("output-data","hdi_regions.csv"))
+
+hdi.yearly <- read_csv(here("output-data","hdi_yearly.csv"))
+hdi.yearly.meas <- read_csv(here("output-data","hdi_yearly_meas.csv"))
+hdi.yearly.meas <- read_csv(here("output-data","hdi_yearly_meas.csv"))
+
+
+```
+
+## Introduction
+
+### What is HDI?
+
+The Human Development Index **(HDI)** was created to emphasize that expanding human choices should be the ultimate criteria for assessing development results. Economic growth is a means to that process but is not an end in itself. The HDI can also be used to question national policy choices, asking how two countries with the same level of Gross National Income (GNI) per capita can end up with different human development outcomes.
+
+In other words, the HDI works as a way to measure progress in a country using three subindexes:
+Life Expectancy, Years of Schooling and GNI per Capita.
+
+### What will you explore?
+
+I will explore the distribution of HDI values & its distribution along regions, countries and time.
+
+---
+
+## HDI 2017
+
+
+### Histogram
+
+In 2017 most countries had high HDI values. There are few countries with low HDI values and most
+countries are concentrated on the **0.7 - 0.8 range**. Which according to their measurements
+classifies as a MEDIUM - HIGH human development.
+
+
+```{r histogram, echo=FALSE, warning=FALSE}
+
+ggplot(hdi.17, aes(x = HDI.17))+
+  geom_histogram(binwidth = 0.01, color="white")+
+  scale_x_continuous(breaks=seq(0.3,1,0.1), limits = c(0.3,1))+
+  theme(panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_blank(),
+        axis.text.x = element_blank())+
+  theme_minimal()+
+  labs(x="Human Development Index 2017",
+       title="HDI Distribution in 2017",
+       caption="Source: UNDP")+
+  theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=24, hjust=0))+
+  theme(axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 10)))+
+  theme(axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 10, l = 0)))+
+  theme(plot.title = element_text(margin = margin(t = 20, r = 0, b = 20, l = 0)))+
+  theme(plot.margin = unit(c(0,1,0,1), "cm"))
+```
+
+### World Map
+
+Using a map we can see the distribution of HDI around the world. Europe and NA are
+the places where the highest HDI values concentrate while Africa seems to be doing
+rather poorly on this index. We know have a more general idea of how the HDI values
+are distributed, let's examine that a bit more in depth.
+
+```{r world.map, echo=FALSE, warning=FALSE}
+world <- st_as_sf(countries110) %>% 
+  filter(sovereignt!="Antarctica")
+#join data with geometries
+
+names <- read_csv(here("input-data","Names.csv"))
+world <- left_join(world, names, by = c("name"="names"))
+
+world.hdi <- left_join(world, hdi.17, by=c("HDI_NAMES"="Country"))
+
+
+ggplot(world.hdi) +
+  geom_sf(data=world, col="grey", fill=NA) +
+  geom_sf(col="grey", aes(fill=HDI.17)) +
+  coord_sf(crs="+proj=robin") +
+    scale_fill_viridis(option = "viridis",
+                     name='Human \nDevelopment \nIndex',
+                     direction = 1,
+                     begin = 0,
+                     end = 1) +
+  theme_minimal() +
+  theme(panel.grid.major = element_line(colour = "transparent"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank())+
+  labs(x=NULL,
+       y=NULL,
+       title="Human Development Index in countries, 2017",
+       subtitle="Course \"Introduction to R for Journalists\"",
+       caption='Source: United Nation Development Report. Map: Natural Earth.')+
+  theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=20, hjust=0))+
+  theme(axis.title.y = element_text(margin = margin(t = 0, r = 20, b = 0, l = 10)))+
+  theme(axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)))+
+  theme(plot.title = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)))+
+  theme(legend.position="bottom")+
+  theme(plot.margin = unit(c(0,1,0,1), "cm"))
+```
+
+### Bar Graph
+
+I decided to explore a little bit more the distribution among regions. Latin America, the region I live in,
+seems to be doing pretty good. I want to dig a bit deeper.
+
+```{r bar_graph, echo=FALSE, warning=FALSE}
+
+hdi.regions <- hdi.regions %>% 
+  mutate(Regions=fct_reorder(Regions, `Human Development Index (HDI) 2017`))
+
+ggplot(hdi.regions, aes(x = Regions, y = `Human Development Index (HDI) 2017`, fill=Regions))+
+  geom_bar(stat = "identity")+
+  scale_y_continuous(breaks=seq(0,1,0.1), limits = c(0,1))+
+  theme(panel.border = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_blank(),
+        axis.text.x = element_blank())+
+  theme_minimal()+
+  scale_fill_manual( values = c( "Latin America and the Caribbean"="tomato",
+                                 "Arab States"="gray",
+                                 "East Asia and the Pacific"="gray",
+                                 "Europe and Central Asia"="gray",
+                                 "South Asia"="gray",
+                                 "Sub-Saharan Africa"="gray"),
+                     guide = FALSE )+
+  labs(y="Human Development Index 2017",
+       x="",
+       title="HDI in 2017 per Region",
+       caption="Source: UNDP")+
+  coord_flip()+
+  theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=24, hjust=0))+
+  theme(axis.title.y = element_text(margin = margin(t = 0, r = 0, b = 0, l = 5)))+
+  theme(axis.title.x = element_text(margin = margin(t = 20, r = 0, b = 10, l = 0)))+
+  theme(plot.title = element_text(margin = margin(t = 20, r = 0, b = 20, l = 0)))+
+  theme(plot.margin = unit(c(0,1,0,0), "cm"))
+
+```
+
+### Latin America Map
+
+Here we can see Latin America and the Caribbean more clearly. Most of the region 
+is doing okay but Chile and Argentina are by far the ones with the higher HDI values,
+Haiti is another exception in the region, it has the lowest HDI value. Was it always this way?
+How have this value changed over time?
+
+
+```{r la.map, message=FALSE, warning=FALSE, echo= FALSE}
+
+
+la.hdi <- subset(world.hdi, region_wb == "Latin America & Caribbean")
+
+
+ggplot(la.hdi) +
+  geom_sf(data=la.hdi, col="black", fill=NA, colour = "black") +
+  geom_sf(col="white", aes(fill=HDI.17)) +
+  coord_sf(crs="+proj=robin") +
+  scale_fill_viridis(option = "viridis",
+                     name='Human \nDevelopment \nIndex',
+                     direction = 1,
+                     begin = 0,
+                     end = 1,
+                     alpha=0.9) +
+  theme_minimal() +
+  theme(panel.grid.major = element_line(colour = "transparent"),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank())+
+  labs(x=NULL,
+       y=NULL,
+       title="HDI in Latin America, 2017",
+       subtitle="Course \"Introduction to R for Journalists\"",
+       caption='Source: United Nation Development Report. Map: Natural Earth.')+
+  theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=20, hjust=0))+
+  theme(plot.title = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)))
+
+```
+
+### Small Multiples
+
+It seems all of Latin America is improving, being the only exception Venezuela which 
+in recent years seems to be on a downward trend. Nevertheless this doesn't let us know
+which country has improved the most. Let's look into that.
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, fig.height=10}
+
+la.names <- la.hdi
+la.names <- select(la.names,c(HDI_NAMES, name))
+
+la.yearly <- left_join(la.names, hdi.yearly,by=c("HDI_NAMES"="Countries") )
+la.change <- left_join(la.names, hdi.change,by=c("HDI_NAMES"="Countries") )
+
+la.yearly <- subset(la.yearly, !is.na(HDI_NAMES))
+
+ggplot(subset(la.yearly, !is.na(name)), aes(x=Year, y = HDI))+
+  geom_line()+
+  facet_wrap(~ name, ncol = 4)+
+  theme_minimal() +
+  labs(x="Years",
+       y="HDI",
+       title="HDI in Latin America, 1990-2017",
+       subtitle="Course \"Introduction to R for Journalists\"",
+       caption='Source: United Nation Development Report. Map: Natural Earth.')+
+  theme(plot.title = element_text(family = "Trebuchet MS", color="#666666", face="bold", size=20, hjust=0))+
+  theme(plot.title = element_text(margin = margin(t = 20, r = 0, b = 0, l = 0)))
+
+
+```
+
+### Slopegraph
+
+Here we get a more nuanced view. It shows the change in HDI rank between countries in Latin America in 2012-2017. The blue ones are countries that improved their rankings, the red ones have worsened and the gray ones remain the same. 
+
+The one thing that popup its the huge drop in HDI ranking Venezuela has gone through. Also the improvement in countries like Brazil or Dominican Republic catch the eye.
+
+It is also strange how the best and worst country in the ranking remained the same between 2012 -2017. Haiti was the 168 country in 2012 and still is in 2017. The same happens with Chile and the 44 spot.
+
+We are able to see that even though all countries have improved their HDI value since the 1990 
+some of them have not improved at a fast enough pace to keep on with the world and their neighbors.
+
+
+```{r  message=FALSE, warning=FALSE, echo=FALSE, fig.height=15}
+
+la.change <- subset(la.change, !is.na(HDI_NAMES))
+la.change$Year <- as.character(la.change$Year)
+
+newggslopegraph(
+  dataframe =  la.change,
+  Times =  Year,
+  Measurement =  HDI,
+  Grouping =  name,
+  Title = "Change in HDI Rank 2012 - 2017",
+  SubTitle = "Based on data by United Nations Development Report.",
+  Caption = NULL,
+  YTextSize = 3,
+  LineThickness = .6,
+  LineColor = c("Haiti" = "gray", "Honduras" = "blue", 
+                "Guatemala"="blue", "Nicaragua"="blue",
+                "Guyana"="red", "Bolivia"="blue", 
+                "El Salvador"="red", "Paraguay"="blue",
+                "Belize"="red","Dominican Rep."="blue",
+                "Suriname"="blue","Jamaica"="red",
+                "Colombia"="blue","Ecuador"="blue",
+                "Peru"="gray", "Brazil"="blue",
+                "Mexico"="red", "Cuba"="red",
+                "Panama"="red", "Costa Rica"="blue",
+                "Venezuela"="red", "Trinidad and Tobago"="red",
+                "Uruguay"="blue", "Bahamas"="red",
+                "Argentina"="red", "Chile"="gray")
+)
+
+```
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
